@@ -47,4 +47,4 @@ const ExtraText = styled.p`
   color: ${(props) => props.type === "forgot" ? "#E5E044" : "#23DD7A"};
 `
 
-export { MainContainer, Row, Title, TextContent, Form, ExtraText}
+export { MainContainer, Row, Title, TextContent, Form, ExtraText }

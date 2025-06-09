@@ -7,8 +7,8 @@ const InputContainer = styled.div`
   display: flex;
   align-items: baseline;
   padding-left: .5rem;
-  margin-bottom: 20px;
   gap: .5rem;
+  margin-bottom: ${({hasError}) => hasError? "0" : "20"}px;
 `
 
 const InputText = styled.input`
@@ -19,4 +19,12 @@ const InputText = styled.input`
   color: #fff;
 `
 
-export { InputContainer, InputText }
+
+const ErrorText = styled.p`
+  font-size: .85rem;
+  color: #ff0000; 
+  margin-bottom: 20px;
+  
+`
+
+export { InputContainer, InputText, ErrorText }
