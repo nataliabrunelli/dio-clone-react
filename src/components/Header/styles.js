@@ -17,6 +17,10 @@ const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   position: fixed;
+
+  [alt="logo"] {
+    cursor: pointer;
+  }
 `
 
 const BuscarInputContainer = styled.div`

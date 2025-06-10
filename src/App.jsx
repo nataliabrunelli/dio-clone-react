@@ -3,6 +3,7 @@ import { GlobalStyle } from "./GlobalStyles"
 import { Home } from "./pages/home"
 import { Login } from "./pages/login"
 import { Feed } from "./pages/feed"
+import { Signin } from "./pages/signin"
 
 
 function App() {
@@ -10,9 +11,10 @@ function App() {
     <BrowserRouter>
       <GlobalStyle />
       <Routes>
-        <Route path="/" element={ <Home/> } />
-        <Route path="/login" element={ <Login/> } />
-        <Route path="/feed" element={ <Feed/> } />
+        <Route path="/" element={ <Home /> } />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/signin" element={ <Signin /> } />
+        <Route path="/feed" element={ <Feed /> } />
       </Routes>
     </BrowserRouter>
   )

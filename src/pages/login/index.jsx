@@ -15,6 +15,7 @@ import password from "../../icons/lock.svg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { api } from "../../services/api";
 
 const schema = yup
   .object({
@@ -37,7 +38,22 @@ const Login = () => {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-  const onSubmit = (data) => navigate("/feed");
+  const onSubmit = async (formData) => {
+    try {
+      const {data} = await api.get(`users?email=${formData.email}`)
+      if (data.length > 0 ) {
+        if (data[0].password === formData.password) {
+          navigate("/feed")
+        } else {
+          alert("Senha inválida")
+        }
+      } else {
+        alert("Usuário não encontrado!")
+      }
+    } catch (error) {
+      alert(error)
+    }    
+  };
 
   return (
     <>
@@ -71,7 +87,7 @@ const Login = () => {
           <Button type="primary" title="Entrar" />
           <Row>
             <ExtraText type="forgot">Esqueci minha senha</ExtraText>
-            <ExtraText>Criar conta</ExtraText>
+            <ExtraText onClick={() => navigate("/signin")}>Criar conta</ExtraText>
           </Row>
         </Form>
       </MainContainer>
