@@ -33,23 +33,40 @@ const Signin = () => {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
+
   const onSubmit = async (formData) => {
-    const { data } = await api.get(
-      `/users?name=${formData.name}&email=${formData.email}`
-    );
+  try {
+    await api.get(`/users?email=${formData.email}`);
+    
+    alert("E-mail já cadastrado!");
 
-    if (data.length > 0) {
-      alert("Usuário já cadastrado!");
+  } catch (error) {
+
+    if (error.response && error.response.status === 404) {
+
+      try {
+        await api.post("/users", {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        });
+
+        alert("Conta criada com sucesso!");
+        navigate("/login");
+
+      } catch (postError) {
+
+        console.error("Erro ao tentar criar a conta:", postError);
+        alert("Ocorreu um erro ao criar a conta. Tente novamente mais tarde.");
+      }
+
     } else {
-      await api.post("/users", {
-        name: formData.name,
-        email: formData.email,
-        password: formData.password,
-      });
 
-      navigate("/login");
+      console.error("Erro inesperado na verificação de usuário:", error);
+      alert("Ocorreu um erro inesperado. Verifique sua conexão e tente novamente.");
     }
-  };
+  }
+};
 
   return (
     <>

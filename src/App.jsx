@@ -8,7 +8,7 @@ import { Signin } from "./pages/signin"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <GlobalStyle />
       <Routes>
         <Route path="/" element={ <Home /> } />

@@ -47,11 +47,9 @@ const Login = () => {
         } else {
           alert("Senha inválida")
         }
-      } else {
-        alert("Usuário não encontrado!")
       }
-    } catch (error) {
-      alert(error)
+    } catch {
+      alert("Usuário não encontrado!")
     }    
   };
 
