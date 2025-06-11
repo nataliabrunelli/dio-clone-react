@@ -41,12 +41,14 @@ const Login = () => {
   const onSubmit = async (formData) => {
     try {
       const {data} = await api.get(`users?email=${formData.email}`)
-      if (data.length > 0 ) {
+      if (data.length > 0 && data[0].email === formData.email ) {
         if (data[0].password === formData.password) {
           navigate("/feed")
         } else {
           alert("Senha inválida")
         }
+      } else {
+        alert ("E-mail inválido")
       }
     } catch {
       alert("Usuário não encontrado!")
