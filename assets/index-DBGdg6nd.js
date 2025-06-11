@@ -201,7 +201,7 @@ input {
 
   scrollbar-width: thin;
   scrollbar-color: #888 transparent;
-`,If="/dio-clone-react/assets/avatar-BqpeEhuR.png",ws=({autenticado:a})=>{const l=Er(),r=u=>{l(u==="Entrar"?"/login":"/signin")};return V.jsx(ix,{children:V.jsxs(lx,{children:[V.jsxs(Mp,{children:[V.jsx("img",{src:sx,alt:"logo",onClick:()=>l("/")}),a?V.jsxs(V.Fragment,{children:[V.jsxs(rx,{children:[V.jsx("img",{src:cx}),V.jsx(ux,{placeholder:"Buscar..."})]}),V.jsx(cf,{href:"#",children:"Live Code"}),V.jsx(cf,{href:"#",children:"Global"})]}):null]}),V.jsx(Mp,{children:a?V.jsx(Pf,{src:If}):V.jsxs(V.Fragment,{children:[V.jsx(cf,{href:"/",children:"Home"}),V.jsx(vr,{title:"Entrar",onClick:()=>r("Entrar")}),V.jsx(vr,{title:"Cadastrar",onClick:()=>r("Cadastrar")})]})})]})})},hx=be.main`
+`,If="/dio-clone-react/assets/avatar-BqpeEhuR.png",ws=({autenticado:a})=>{const l=Er(),r=c=>{l(c==="Entrar"?"/login":"/signin")},u=c=>{c.preventDefault(),l("/")};return V.jsx(ix,{children:V.jsxs(lx,{children:[V.jsxs(Mp,{children:[V.jsx("img",{src:sx,alt:"logo",onClick:()=>l("/")}),a?V.jsxs(V.Fragment,{children:[V.jsxs(rx,{children:[V.jsx("img",{src:cx}),V.jsx(ux,{placeholder:"Buscar..."})]}),V.jsx(cf,{href:"#",children:"Live Code"}),V.jsx(cf,{href:"#",children:"Global"})]}):null]}),V.jsx(Mp,{children:a?V.jsx(Pf,{src:If}):V.jsxs(V.Fragment,{children:[V.jsx(cf,{href:"#",onClick:c=>u(c),children:"Home"}),V.jsx(vr,{title:"Entrar",onClick:()=>r("Entrar")}),V.jsx(vr,{title:"Cadastrar",onClick:()=>r("Cadastrar")})]})})]})})},hx=be.main`
   width: 100%;
   max-width: 80%;
   height: 100vh;
