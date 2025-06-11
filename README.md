@@ -32,7 +32,7 @@ Este projeto foi construído com as seguintes tecnologias:
 -   **[Styled Components](https://styled-components.com/)**: Para estilização dos componentes de forma isolada e dinâmica.
 -   **[React Router](https://reactrouter.com/)**: Para gerenciamento das rotas da aplicação.
 -   **[React Hook Form](https://react-hook-form.com/)**: Para gerenciamento de formulários de forma performática e simplificada.
--   **[Yup](https://github.com/jquense/yup)**: Para validação de schemas dos formulários.
+-   **[Yup](https://react-hook-form.com/get-started#SchemaValidation)**: Para validação de schemas dos formulários.
 -   **[Axios](https://axios-http.com/)**: Cliente HTTP para realizar requisições à API.
 
 <br>
