@@ -16,12 +16,17 @@ import { useNavigate } from "react-router";
 const Header = ({ autenticado }) => {
   const navigate = useNavigate()
 
-  const handleClick = (title) => {
+  const handleNav = (title) => {
     if (title === "Entrar") {
       navigate("/login")
     } else {
       navigate("/signin")
     }
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    navigate("/")
   }
 
   return (
@@ -45,9 +50,9 @@ const Header = ({ autenticado }) => {
             <Avatar src={avatar} />
           ) : (
             <>
-              <Menu href="/">Home</Menu>
-              <Button title="Entrar" onClick={() => handleClick("Entrar")} />
-              <Button title="Cadastrar" onClick={() => handleClick("Cadastrar")} />
+              <Menu href="#" onClick={(e) => handleClick(e)} >Home</Menu>
+              <Button title="Entrar" onClick={() => handleNav("Entrar")} />
+              <Button title="Cadastrar" onClick={() => handleNav("Cadastrar")} />
             </>
           )}
         </Row>
